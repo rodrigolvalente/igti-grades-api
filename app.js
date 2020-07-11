@@ -6,13 +6,6 @@ import { gradeRouter } from './routes/gradeRouter.js';
 import { logger } from './config/logger.js';
 import { db } from './models/index.js';
 
-import request from 'request';
-const fixieRequest = request.defaults({ proxy: process.env.FIXIE_URL });
-
-fixieRequest(db.url, (err, res, body) => {
-  console.log(`Got response: ${res.statusCode}`);
-});
-
 (async () => {
   try {
     await db.mongoose.connect(db.url, {
