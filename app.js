@@ -21,13 +21,15 @@ import { db } from './models/index.js';
 })();
 
 const app = express();
+const PORT = process.env.PORT || 8081;
+const CORS_ORIGIN = 'http://localhost:3001';
 
 //define o dominio de origem para consumo do servico
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: 'http://localhost:3001',
+    origin: CORS_ORIGIN,
   })
 );
 
@@ -37,6 +39,6 @@ app.get('/', (_, res) => {
   res.send('API em execucao');
 });
 
-app.listen(process.env.PORT || 8081, () => {
+app.listen(PORT, () => {
   logger.info(`Servidor em execucao na porta ${process.env.PORT}`);
 });

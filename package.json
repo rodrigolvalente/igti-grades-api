@@ -20,5 +20,8 @@
     "winston": "^3.3.3",
     "winston-mongodb": "^5.0.1"
   },
+  "engines": {
+    "node": "12.x"
+  },
   "type": "module"
 }
