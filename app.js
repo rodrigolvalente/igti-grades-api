@@ -22,7 +22,7 @@ import { db } from './models/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 8081;
-const CORS_ORIGIN = 'https://my-grades-app-igti.herokuapp.com';
+const CORS_ORIGIN = 'http://grades-app.rlvalente.com';
 
 //define o dominio de origem para consumo do servico
 app.use(bodyParser.json());
